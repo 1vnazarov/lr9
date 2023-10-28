@@ -1,0 +1,52 @@
+main, header {
+	margin: auto;
+	width: 60%;
+	min-width:320px;
+}
+body {
+	background-image: url(bg.jpeg);
+}
+.f{
+     border-radius: 20px;
+     border: 1px solid #2d9fd9;
+     width: 250px;
+     height: 30px;
+     padding-left: 10px;
+    }
+    
+input:focus {
+     outline: none;
+     border: 1px solid #a0d18c;
+}
+.valid, .invalid {
+	display: none;
+}
+#tel:valid~.valid, #pass:valid~.valid{
+	display:inline-block;
+}
+#tel:placeholder-shown~.valid, #pass:placeholder-shown~.valid, #tel:placeholder-shown~.invalid, #pass:placeholder-shown~.invalid{
+	display:none !important;
+}
+form:invalid input[type='submit']{
+	display: none;
+}
+
+#tel:invalid~.invalid, #pass:invalid~.invalid{
+	animation: message 1s;
+display: inline-block;
+		background: #00C4B4;
+			color: #fff;
+	padding: 0.5em;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+#tel:valid~.valid, #pass:valid~.valid{
+	animation: message 1s;
+}
+@keyframes message{
+	0%{
+		opacity:0;
+	}
+	100%{
+	opacity: 1;
+	}
+}
