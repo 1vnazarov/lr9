@@ -13,6 +13,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="./scripts/test.js"></script>
 </head>
 
 <body>
@@ -24,57 +25,51 @@
 <fieldset>
 <legend>Опрос авиакомпании</legend>
 <p>Ваше имя</p>
-<input type="text" id="name" placeholder="ФИО" class='f'/>
+<input type="text" id="name" placeholder="ФИО" class='f answer'>
 <p>Введите электронную почту</p>
-<input type="email" id = "email" class ='f'>
+<input type="email" id = "email" class ='f answer' placeholder = "Адрес электронной почты: ">
 <div>
 <p>Введите номер телефона</p>
-<input type="tel" id = "tel" pattern ="^((\+7|8)+([0-9]){10})$" placeholder=' ' class='f'>
+<input type="tel" id = "tel" pattern ="^((\+7|8)+([0-9]){10})$" placeholder="Телефон: " class='f answer'>
 		<div class='valid'>&#9989;</div>
 		<div class='invalid'>&#10060; Начиная с +7 или 8</div></div>
 <div><p>Введите пароль</p>
-<input required type = "password" id = "pass" class = 'f' pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=' '>
+<input type = "password" id = "pass" class = 'f answer' pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=' '>
 		<div class='valid'>&#9989;</div>
 		<div class='invalid'>&#10060; От 8 символов. Он должен содержать как минимум один спецсимвол, одну цифру, строчные и прописные латинские буквы</div>
 		</div>
 <p>Когда Вы в последний раз летали в самолете?</p>
-<input type="date" id="last" max="2023-09-11" class='f'/>
+<input type="date" id="last" max="2023-09-11" class='f answer'>
 <p>Опаздывали ли Вы на рейс?</p>
-<input type = "radio" id = "late1" name='_late'/>
+<input type = "radio" id = "late1" name='_late' value="Да" class="answer">
 <label for = "late1">Да</label>
-<input type = "radio" id = "late2" name='_late'/>
+<input type = "radio" id = "late2" name='_late' value="Нет" class="answer">
 <label for = "late2">Нет</label>
 <p>Устаете ли Вы от перелетов?</p>
-<select name="f">
+<select id="s">
   <option value="Не знаю">Не знаю</option>
   <option value="Да">Да</option>
   <option value="Нет">Нет</option>
   <option value="Иногда">Иногда</option>
 </select>
 <p>Наиболее комфортное время для полета</p>
-<input type = "time" id = "time" class='f'>
+<input type = "time" id = "time" class='f answer'>
 <p>Покупаете ли Вы что-нибудь во время полета?</p>
-<input type = "radio" id = "buy1" name='buy'/>
+<input type = "radio" id = "buy1" name='buy' value="Да" class="answer">
 <label for = "buy1">Да</label>
-<input type = "radio" id = "buy2" name='buy'/>
+<input type = "radio" id = "buy2" name='buy' value="Нет" class="answer">
 <label for = "buy2">Нет</label>
 <p>Любимый цвет самолета</p>
-<input type = "color" id="color"/>
+<input type = "color" id="color" class="answer">
 <p>Ваш рост</p>
-<p>
-<input type="number" min="155" max="199" value="155" id = "height" class='f'/>
-см
-</p>
+<input type="number" min="155" max="199" value="155" id = "height" class='f answer'> см
 <p>Разместите Вашу фотографию</p>
-<input type = "file" id="photo" accept="image/*"/>
+<input type = "file" id="photo" accept="image/*" class="answer">
 </fieldset>
-<p>
-<input type="checkbox" name = "procpers" required/>
-Согласие на обработку персональных данных
-</p>
+<p><input type="checkbox" id = "procpers" class="answer" required>Согласие на обработку персональных данных</p>
 <p>
 <input type="reset" value="Очистить" class='f'>
-<input type="submit" value="Отправить" class='f'>
+<input type="submit" value="Отправить" class='f' onclick="test()">
 </p>
 </form>
 </main>
